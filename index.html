@@ -5,19 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
-    <script src="script.js"></script>
+  
     <title>Coding Quiz Challenge</title>
 </head>
 <body>
     <div class="container">
-        <div class="start-page"></div>
-            <h1>Coding Quiz Challenge</h1>
-            <h2>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</h2>
 
-            <div class="quiz-controls">
-            <button id="start-quiz" class="start-quiz btn">Start Quiz</button>
+        <div class="start-page">
+        <h1>Coding Quiz Challenge</h1>
+        <h2>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</h2>
+        <div class="quiz-controls">
+            <button id="start-quiz" class="start-quiz button">Start Quiz</button>
             </div>
-
+        </div>
+        <div id="quiz-container">
+       
+            <div id="answers" class="button-grid">
+                <button class="button">A. </button>
+                <button class="button">B. </button>
+                <button class="button">C. </button>
+                <button class="button">D. </button>
+            </div>
+        
+           
+        </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -46,12 +46,17 @@ justify-content: flex-start;
 align-items: flex-start;
 
 }
-.btn:hover {
+.button:hover {
     background-color: rgb(203, 97, 230);
     color: black;
 }
 
 .quiz-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.questions {
     display: flex;
     justify-content: center;
     align-items: center;

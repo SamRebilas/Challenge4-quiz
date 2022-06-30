@@ -77,3 +77,32 @@ align-items: flex-start;
     top: 30px;
     left: 45px;
 }
+.viewScores h1{
+    width: 100%;
+    padding: 10px;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.viewScores h2{
+    width: 100%;
+    padding: 10px;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.viewScores button{
+
+    background-color: rgb(52, 0, 100);
+    color: #f9fbfd;
+    font-size: x-large;
+    border-radius: 6px;
+    padding: 20px 40px;
+}
+.viewScores form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

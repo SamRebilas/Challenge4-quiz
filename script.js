@@ -3,6 +3,9 @@ var ansButton = document.getElementById('answers')
 var intro = document.getElementById('introduction')
 var questionElement = document.getElementById('question')
 var timer = document.getElementById("timer")
+var container = document.getElementById("quiz-container")
+var viewHighScores = document.getElementById("high-score")
+var viewScore = document.getElementById("viewScores")
 var currentQuestion = 0
 var currentChoices = 0
 var buttonA = document.getElementById('a')
@@ -10,12 +13,16 @@ var buttonB = document.getElementById('b')
 var buttonC = document.getElementById('c')
 var buttonD = document.getElementById('d')
 var timeRemaining = 60;
+var scores = 0;
+
+viewScore.style.display = "none"
 
 function beginQuiz(){
     console.log('started')
     startButton.style.display = "none";
     ansButton.style.display = "";
     intro.style.display = "none"
+   
    
     firstQuestion()
     countdownTimer()
@@ -209,7 +216,16 @@ timeRemaining --
 
 function finalScore(){
     window.alert("Congrats! your score is " + timeRemaining)
+    container.style.display = "none"
+    timer.style.display = "none"
+    viewHighScores.style.display = "none"
+  
+viewScore.textContent = "Your score: " + timeRemaining
+viewScore.style.display = "" 
+
+
 }
+
 
 
 

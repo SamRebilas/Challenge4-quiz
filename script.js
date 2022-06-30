@@ -17,52 +17,85 @@ function beginQuiz(){
     ansButton.style.display = "";
     intro.style.display = "none"
    
-    nextQuestion()
+    firstQuestion()
     
 }
 // quiz questions
-var questions = [
+var questionBank = [
     {
         question: "1. Commonly used data types do NOT include:",
-        correctAnswer: buttonB,
-        choiceA: "strings", 
-        choiceB: "booleans", 
-        choiceC: "alerts", 
-        choiceD: "numbers",
+        choices:[
+        {text: "strings", correctAnswer: false} ,
+        {text: "booleans", correctAnswer: true },
+        {text: "alerts", correctAnswer: false},
+        {text: "numbers", correctAnswer: false},
+        ],
     },
     {
-        question: "The condition in an if / else statement is enclosed with _____.",
-        correctAnswer: 2,
-        choices: ["quotes", "curly brackets", "parenthesis", "square brackets"],
+        question: "2. The condition in an if / else statement is enclosed with ______.",
+        choices:[
+        {text: "quotes", correctAnswer: false} ,
+        {text: "curly brackets", correctAnswer: false },
+        {text: "parenthesis", correctAnswer: true},
+        {text: "square brackets", correctAnswer: false},
+        ],
     },
 ];
 
-function nextQuestion(){
-   displayQuestion(questions[currentQuestion])
-   
+function firstQuestion(){
+displayQuestion(questionBank[currentQuestion])
+   buttonA.addEventListener("click", chooseAnswer)
+   buttonB.addEventListener("click", chooseAnswer)
+   buttonC.addEventListener("click", chooseAnswer)
+   buttonD.addEventListener("click", chooseAnswer)
+
+ // questionBank.question++
   
 
    
 }
-function displayQuestion(questions) {
-questionElement.innerText = questions.question
+function displayQuestion(questionBank) {
+questionElement.innerText = questionBank.question
 
-buttonA.innerHTML = questions.choiceA;
-buttonB.innerHTML = questions.choiceB;
-buttonC.innerHTML = questions.choiceC;
-buttonD.innerHTML = questions.choiceD;
-if (buttonB.clicked)
-console.log(buttonB)
+buttonA.innerHTML = questionBank.choices[0].text;
+buttonA.setAttribute("choices", questionBank.choices[0].correctAnswer)
+
+buttonB.innerHTML = questionBank.choices[1].text;
+buttonB.setAttribute("choices", questionBank.choices[1].correctAnswer)
+
+buttonC.innerHTML = questionBank.choices[2].text;
+buttonC.setAttribute("choices", questionBank.choices[2].correctAnswer)
+
+buttonD.innerHTML = questionBank.choices[3].text;
+buttonD.setAttribute("choices", questionBank.choices[3].correctAnswer)
+
+//questionBank.question++;
+}
+
+function chooseAnswer(event) {
+    var chooseAnswer = event.target.getAttribute("choices");
+    if (chooseAnswer === "true") {
+        window.alert("Correct!")
+        secondQuestion()
+    }
+    else {
+        window.alert("Sorry that is incorrect.")
+    }
+}
+
+function secondQuestion(){
+  displayQuestion(questionBank[1])
 
 }
 
 
 
-for(var i = 0; i < questions.length; i++) {
-    var questionName = questions[currentQuestion].question
-    var choicesName = questions[currentQuestion].choices
-    console.log(i)
-}
+
+//for(var i = 0; i < questionBank.length; i++) {
+   // var questionName = questionBank[currentQuestion].question
+   // var choicesName = questionBank[currentQuestion].choices
+   // console.log(i)
+//}
 
 startButton.addEventListener('click', beginQuiz, ansButton, intro, )
 

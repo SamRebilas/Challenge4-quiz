@@ -53,8 +53,8 @@ var questionBank = [
         choices:[
         {text: "1. numbers and strings", correctAnswer: false},
         {text: "2. other arrays", correctAnswer: false },
-        {text: "3. booleans", correctAnswer: true},
-        {text: "4. all of the above", correctAnswer: false},
+        {text: "3. all of the above", correctAnswer: true},
+        {text: "4. booleans", correctAnswer: false},
         ],
     },
     {
@@ -129,7 +129,6 @@ function secondQuestion(){
     function chooseAnswer(event) {
         var chooseAnswer = event.target.getAttribute("choices");
         if (chooseAnswer === "true") {
-            
             thirdQuestion()
             
     }
@@ -148,7 +147,6 @@ function thirdQuestion(){
     function chooseAnswer(event) {
         var chooseAnswer = event.target.getAttribute("choices");
         if (chooseAnswer === "true") {
-           
             fourthQuestion()
             
         }
@@ -169,9 +167,8 @@ function fourthQuestion(){
     function chooseAnswer(event) {
         var chooseAnswer = event.target.getAttribute("choices");
         if (chooseAnswer === "true") {
-           
             fifthQuestion()
-            
+    
         }
         else{
             
@@ -188,30 +185,26 @@ function fifthQuestion(){
     buttonD.addEventListener("click", chooseAnswer)
 
     function chooseAnswer(event) {
-             var chooseAnswer = event.target.getAttribute("choices");
-            if (chooseAnswer === "true"){
-                finalScore()
-                }
-                else{
+        var chooseAnswer = event.target.getAttribute("choices");
+        if (chooseAnswer === "true"){
+            finalScore()
+        }
+        else{
                     
-                }
+        }
     }
  }
 
  function countdownTimer(){
- var timeInterval = setInterval(function(){
+    var timeInterval = setInterval(function(){
     timer.textContent = "Time: " + timeRemaining
     timeRemaining --
     
-if (timeRemaining < 10){
-timer.textContent= "10 seconds remaining!  " + timeRemaining
-timeRemaining --
-   
+    if (timeRemaining < 10){
+    timer.textContent= "10 seconds remaining!  " + timeRemaining
+    timeRemaining --
 }
-
- 
 },1000)
-
 }
 
 function finalScore(){
@@ -219,15 +212,10 @@ function finalScore(){
     container.style.display = "none"
     timer.style.display = "none"
     viewHighScores.style.display = "none"
-  
-viewScore.textContent = "Your score: " + timeRemaining
-viewScore.style.display = "" 
-
+    viewScore.textContent = "Your score: " + timeRemaining
+    viewScore.style.display = "" 
 
 }
-
-
-
 
 startButton.addEventListener('click', beginQuiz, ansButton, intro, )
 

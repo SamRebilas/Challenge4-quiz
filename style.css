@@ -76,11 +76,12 @@ align-items: flex-start;
     position: absolute;
     top: 30px;
     left: 45px;
+    
 }
 .viewScores h1{
     width: 100%;
     padding: 10px;
-   
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,7 +89,7 @@ align-items: flex-start;
 .viewScores h2{
     width: 100%;
     padding: 10px;
-   
+    
     display: flex;
     justify-content: center;
     align-items: center;
